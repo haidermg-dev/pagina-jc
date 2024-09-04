@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mi Sitio Web</title>
+    <link rel="stylesheet" href="styles.css">
+    <!-- Incluye Font Awesome para iconos -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+</head>
+
+<body>
+    <header>
+        <nav>
+            <button id="menu-toggle" aria-label="Abrir menú">
+                &#9776; <!-- Icono de hamburguesa -->
+            </button>
+            <ul>
+                <li><a href="#home">Inicio</a></li>
+                <li><a href="#about">Sobre Nosotros</a></li>
+                <li><a href="#services">Servicios</a></li>
+                <li><a href="#portfolio">Portafolio</a></li>
+                <li><a href="#contact">Contacto</a></li>
+            </ul>
+        </nav>
+    </header>
+    
+
+    <section id="home" class="hero">
+        <img src="img/logo.gif" alt="JCode" style="max-width: 20%; height: auto;">
+        <p>SOLUCIONES EN EL DESARROLLO DE SOFTWARE.</p>
+    </section>
+
+    <section id="about">
+        <h2>Sobre Nosotros</h2>
+        <p>Somos un grupo de expertos comprometidos en proporcionar soluciones creativas y efectivas.</p>
+    </section>
+
+    <section id="services">
+        <h2>Servicios</h2>
+        <div class="services-container">
+            <div class="service">
+                <h3>Desarrollo Web</h3>
+                <p>Creación de sitios web personalizados.</p>
+            </div>
+            <div class="service">
+                <h3>Diseño Gráfico</h3>
+                <p>Diseños creativos para tu marca.</p>
+            </div>
+              <div class="service">
+                <h3>Desarrollo de Escritorio</h3>
+                <p>Diseños creativos para tu marca.</p>
+            </div>
+              <div class="service">
+                <h3>App</h3>
+                <p>Diseños creativos para tu marca.</p>
+            </div>
+              <div class="service">
+                <h3>Desarrollo de Software Embebido</h3>
+                <p>Diseños creativos para tu marca.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Carrusel Futurista en la Sección de Portafolio -->
+    
+    <section id="portfolio">
+        <h2>Portafolio</h2>
+        <div class="card">
+            <img src="img/logo.gif" alt="Proyecto 1">
+            <div class="card__content">
+                <p class="card__title">Project Name 1</p>
+                <p class="card__description">Lorem ipsum dolor sit amet,
+                    consectetur adipiscing elit, sed do eiusmod tempor
+                    incididunt ut labore et dolore magna aliqua. Ut enim
+                    ad minim veniam, quis nostrud exercitation ullamco.</p>
+                <button class="card__button secondary">Ver más...</button>
+            </div>
+        </div>
+        <div class="card">
+            <img src="img/logo.gif" alt="Proyecto 2">
+            <div class="card__content">
+                <p class="card__title">Project Name 2</p>
+                <p class="card__description">Lorem ipsum dolor sit amet,
+                    consectetur adipiscing elit, sed do eiusmod tempor
+                    incididunt ut labore et dolore magna aliqua. Ut enim
+                    ad minim veniam, quis nostrud exercitation ullamco.</p>
+                <button class="card__button secondary">Ver más...</button>
+            </div>
+        </div>
+        <!-- Tarjeta 3 -->
+        <div class="card">
+            <img src="img/logo.gif" alt="Proyecto 3">
+            <div class="card__content">
+                <p class="card__title">Project Name 3</p>
+                <p class="card__description">Lorem ipsum dolor sit amet,
+                    consectetur adipiscing elit, sed do eiusmod tempor
+                    incididunt ut labore et dolore magna aliqua. Ut enim
+                    ad minim veniam, quis nostrud exercitation ullamco.</p>
+                <button class="card__button secondary">Ver más...</button>
+            </div>
+        </div>
+    </section>
+
+    <section id="contact">
+        <form class="form">
+            <h1>Contacto</h1>
+            <p>Nos encantaria saber de ti. Puedes contactarmos a través de los siguientes medios:</p>
+            <span class="input-span">
+                <label for="nombre" class="titulos">Nombre:</label>
+                <input type="nombre" name="nombre" id="nombre" /></span>
+            <span class="input-span">
+                <label for="correo" class="titulos">Correo:</label>
+                <input type="correo" name="correo" id="correo" /></span>
+            <span class="input-span">
+                <label for="mensaje" class="titulos">Mensaje:</label>
+                <textarea name="mensaje" id="mensaje" placeholder="Escribenos tu opinión..."></textarea></span>
+            <input class="submit" type="submit" value="Enviar" />
+
+        </form>
+        <div class="contact-details">
+            <div class="contact-info">
+                <h3>Información Adicional</h3>
+                <p><i class="fas fa-phone"></i> +57 3226670062</p>
+                <p><i class="fas fa-map-marker-alt"></i> Calle 51a 50a-13, El Santuario, Colombia</p>
+            </div>
+            <div class="social-media">
+                <h3>Síguenos</h3>
+                <a href="#"><i class="fab fa-facebook-f"></i></a>
+                <a href="#"><i class="fab fa-twitter"></i></a>
+                <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                <a href="#"><i class="fab fa-instagram"></i></a>
+            </div>
+        </div>
+    </section>
+
+    <footer class="footer">
+        <div class="social-icons">
+            <a href="#"><i class='bx bxl-facebook'></i></a>
+            <a href="#"><i class='bx bxl-twitter'></i></a>
+            <a href="#"><i class='bx bxl-linkedin'></i></a>
+            <a href="#"><i class='bx bxl-github'></i></a>
+        </div>
+        <p>&copy; 2024 JCode.com Todos los derechos protegidos. Diseño y desarrollo por JCode.</p>
+    </footer>
+    <script>
+        document.getElementById('menu-toggle').addEventListener('click', function () {
+            var menu = document.querySelector('nav ul');
+            menu.classList.toggle('active');
+        });
+    </script>
+    
+</body>
+
+</html>

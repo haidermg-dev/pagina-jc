@@ -1,0 +1,601 @@
+/* Estilos generales para el Cuerpo del documento */
+body {
+    font-family: "Lexend Deca", sans-serif; 
+    line-height: 28px; 
+    font-size: 16px; 
+    margin: 0; 
+    padding: 0; 
+}
+
+/* Estilos para el encabezado y pie de página */
+/* Estilos generales para el encabezado */
+header {
+    background-color: #000000; 
+    color: #FFFFFF; 
+    padding: 20px; 
+    text-align: center; 
+    position: fixed; 
+    width: 100%; 
+    box-shadow: 0 2px 5px rgba(45, 147, 3, 0.1); 
+    z-index: 1000; /* Asegura que el header esté por encima de otros elementos */
+}
+
+/* Estilos para el menú de navegación */
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    text-decoration: none;
+}
+
+/* Estilos para el ícono de hamburguesa */
+#menu-toggle {
+    display: none; /* Oculto por defecto en pantallas grandes */
+    background: none;
+    border: none;
+    font-size: 24px;
+    color: #FFFFFF;
+    cursor: pointer;
+    position: fixed; /* Fijo para que esté siempre visible en la parte superior derecha */
+    top: 20px;
+    right: 20px;
+    z-index: 1001; /* Asegura que el ícono esté encima de otros elementos */
+}
+
+/* Estilos para el menú de navegación en pantallas grandes */
+ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    display: flex; /* Menú visible en pantallas grandes */
+    justify-content: center;
+    align-items: center;
+}
+
+ul li {
+    margin: 0 15px;
+}
+
+ul li a {
+    text-decoration: none; /* Quita cualquier subrayado existente */
+    position: relative;
+    color: #FFFFFF; /* Color del texto de los enlaces */
+    font-size: 16px;
+    padding: 10px;
+}
+
+ul li a::after {
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 2px;
+    bottom: -4px; /* Ajusta esta propiedad para la posición del subrayado */
+    left: 0;
+    background-color: white; /* Color del subrayado (puedes cambiar según tu diseño) */
+    transform: scaleX(0);
+    transform-origin: bottom right;
+    transition: transform 0.25s ease-out;
+}
+
+ul li a:hover::after {
+    transform: scaleX(1);
+    transform-origin: bottom left;
+}
+
+/* Estilos para el menú en pantallas pequeñas */
+@media (max-width: 767px) {
+    #menu-toggle {
+        display: block; /* Mostrar el ícono en pantallas pequeñas */
+    }
+
+    ul {
+        display: none; /* Ocultar el menú en pantallas pequeñas por defecto */
+        flex-direction: column;
+        width: 100%;
+        background-color: #000000;
+        position: absolute;
+        top: 60px; /* Ajusta según la altura del encabezado */
+        left: 0;
+        padding: 10px;
+        box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
+    }
+
+    ul.active {
+        display: flex; /* Mostrar el menú cuando esté activo */
+    }
+
+    ul li {
+        margin: 10px 0;
+    }
+}
+
+
+/* Estilos para el menú en pantallas pequeñas */
+@media (max-width: 767px) {
+    #menu-toggle {
+        display: block; /* Mostrar el ícono en pantallas pequeñas */
+    }
+
+    nav ul {
+        max-height: 0;
+        overflow: hidden;
+        opacity: 0;
+        transition: max-height 0.5s ease-in-out, opacity 0.5s ease-in-out;
+        background-color: #000000; /* Fondo del menú */
+        width: 100%;
+        position: absolute;
+        top: 60px; /* Ajusta según la altura del encabezado */
+        left: 0;
+        z-index: 1000; /* Asegura que el menú esté encima de otros elementos */
+        display: flex; /* Flexbox para permitir la animación de apertura */
+        flex-direction: column;
+        align-items: start;
+        padding: 10px;
+    }
+
+    nav ul.active {
+        max-height: 500px; /* Ajusta este valor según el tamaño del contenido del menú */
+        opacity: 1;
+    }
+
+    nav ul li {
+        margin: 10px 0;
+    }
+
+    nav ul li a {
+        color: #FFFFFF; /* Color del texto del menú */
+        font-size: 18px; /* Tamaño de fuente */
+    }
+}
+
+
+/* Estilos para los botones */
+.btn-main, form button {
+    background-color: #000000; 
+    padding: 10px 20px; 
+    border-radius: 5px; 
+    font-weight: 400; 
+    cursor: pointer; 
+}
+
+form button:hover {
+    background-color: #5a0d9a; 
+}
+
+/* Estilos para la sección hero */
+.hero {
+    background-color: #000000; 
+    color: #ffffff; 
+    text-align: center; 
+    padding: 50px 20px; 
+}
+
+.hero h1 {
+    font-size: 60px; 
+    margin: 0; 
+}
+
+.hero p, .contact-info p {
+    font-size: 18px; 
+}
+
+/* Estilos generales para secciones */
+section {
+    padding: 40px 20px; 
+}
+
+section h2 {
+    font-size: 36px; 
+    color: #262236; 
+}
+
+/* Estilos para la sección de servicios y contacto */
+.service, #contact {
+    background-color: #f5f5f5; 
+    padding: 20px; 
+    margin: 20px 0; 
+}
+
+.service {
+    border: 1px solid #dcdcdc;
+    border-radius: 10px;
+    box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.service:hover {
+    transform: translateY(-5px);
+    box-shadow: 0px 10px 25px rgba(0, 0, 0, 0.15);
+}
+
+.service h3 {
+    color: #000000;
+}
+
+.service p {
+    color: #333333;
+}
+
+/* Estilos para los elementos del portafolio */
+.portfolio-item {
+    margin: 20px 0; 
+}
+
+.portfolio-item img {
+    max-width: 100%; 
+    height: auto; 
+}
+
+/* Estilos para el formulario */
+form {
+    max-width: 600px; 
+    margin: 0 auto; 
+}
+
+form input, form textarea {
+    width: 100%; 
+    padding: 10px; 
+    margin-bottom: 10px; 
+}
+
+/* Estilos para la sección de detalles de contacto */
+/* .contact-details {
+    display: flex; 
+    justify-content: space-between; 
+    align-items: flex-start; 
+    flex-wrap: wrap; 
+    margin-top: 40px; 
+}
+
+.contact-info, .social-media {
+    flex: 1; 
+    min-width: 250px; 
+    padding: 20px; 
+    box-sizing: border-box; 
+}
+
+.contact-info h3, .social-media h3 {
+    margin-bottom: 15px; 
+} */
+ /* From Uiverse.io by bociKond */ 
+.form {
+    --bg-light: #efefef;
+    --bg-dark: #707070;
+    --clr: #000;
+    --clr-alpha: #9c9c9c60;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1rem;
+    width: 100%;
+    max-width: 500px;
+  }
+  
+  .form .input-span {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+  
+  .form input[type="email"],
+  .form input[type="password"] {
+    border-radius: 0.5rem;
+    padding: 1rem 0.75rem;
+    width: 100%;
+    border: none;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    background-color: var(--clr-alpha);
+    outline: 2px solid var(--bg-dark);
+  }
+  
+  .form input[type="email"]:focus,
+  .form input[type="password"]:focus {
+    outline: 2px solid var(--clr);
+  }
+  
+  .titulos {
+    align-self: flex-start;
+    color: var(--clr);
+    font-weight: 600;
+    
+  }
+  
+  .form .submit {
+    padding: 1rem 0.75rem;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    border-radius: 3rem;
+    background-color: var(--bg-dark);
+    color: var(--bg-light);
+    border: none;
+    cursor: pointer;
+    transition: all 300ms;
+    font-weight: 600;
+    font-size: 0.9rem;
+  }
+  
+  .form .submit:hover {
+    background-color: var(--clr);
+    color:#fff;
+  }
+  
+  .span {
+    text-decoration: none;
+    color: var(--bg-dark);
+  }
+  
+  .span a {
+    color: var(--clr);
+  }
+  
+
+/* Enlaces para redes sociales */
+.social-media a {
+    display: inline-block; 
+    font-size: 24px; 
+    color: #333; 
+    margin: 0 10px; 
+    transition: color 0.3s; 
+}
+
+footer .social-icons {
+    margin-bottom: 10px; 
+}
+
+/* Ajustes específicos para la sección de servicios */
+.service {
+    margin: 10px 0;
+    padding: 15px;
+}
+
+.service h3 {
+    font-size: 20px;
+}
+
+.service p {
+    font-size: 14px;
+}
+
+/* Estilos responsivos para móviles */
+@media (max-width: 767px) {
+    section {
+        padding: 20px 10px;
+    }
+}
+/* Fuente Lora desde Google Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Lora:wght@400;700&display=swap');
+
+/* Estilo global para el cuerpo del documento */
+body {
+    font-family: 'Lora', serif;
+    background-color: #f7f7f7;
+    color: #333;
+    margin: 0;
+    padding: 0;
+    line-height: 1.75;
+}
+
+/* Estilo para la sección 'Sobre Nosotros' */
+#about {
+    padding: 50px 30px;
+    background-color: #ffffff;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+    max-width: 1500px;
+    margin: 30px auto;
+}
+
+/* Estilo para el encabezado de la sección */
+#about h2, #services h3 {
+    font-size: 2.2em;
+    font-weight: 700;
+    color: #2c3e50;
+    margin-bottom: 20px;
+    
+    text-transform: uppercase;
+}
+
+/* Estilo para el párrafo de la sección */
+#about p,#services {
+    font-size: 1.15em;
+    color: #555;
+    line-height: 1.8;
+    text-align: justify;
+    margin-bottom: 20px;
+}
+
+/* Estilo adicional para enlaces dentro del párrafo (si los hay) */
+#about p a {
+    color: #ffffff;
+    text-decoration: none;
+}
+
+#about p a:hover {
+    text-decoration: underline;
+}
+/* Estilos para el carrusel futurista */
+/* From Uiverse.io by D3OXY */ 
+#portfolio {
+    text-align: center;
+    padding: 50px 0;
+}
+
+#portfolio h2 {
+    font-size: 3.5em;
+    margin-bottom: 40px;
+}
+
+#portfolio .card {
+    display: inline-block;
+    margin: 20px;
+    max-width: 300px;
+    text-align: left;
+    vertical-align: top;
+}
+
+#portfolio .card img {
+    width: 100%;
+    height: auto;
+}
+
+#portfolio .card__content {
+    padding: 20px;
+}
+
+#portfolio .card__title {
+    font-size: 1.5em;
+    margin-bottom: 10px;
+}
+
+#portfolio .card__description {
+    font-size: 1em;
+    margin-bottom: 20px;
+}
+
+#portfolio .card__button {
+    font-size: 1em;
+    padding: 10px 20px;
+    cursor: pointer;
+}
+
+
+.card {
+    flex: 1 1 300px; /* Asegura que las tarjetas se mantengan del tamaño adecuado y se distribuyan uniformemente */
+    max-width: 300px; /* Evita que las tarjetas se hagan más grandes que 300px */
+    height: 350px;
+    aspect-ratio: 16/9;
+    background-color: #000;
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column; /* Asegura que el contenido dentro de las tarjetas esté alineado en columna */
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    perspective: 1000px;
+    box-shadow: 0 0 0 5px #ffffff80;
+    transition: all 0.6s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+  
+  .card img {
+    width: 200px;
+    fill: #333;
+    transition: all 0.6s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  }
+  
+  .card__image {
+    width: 100%;
+    height: 100%;
+  }
+  
+  .card:hover {
+    transform: scale(1.05);
+    box-shadow: 0 8px 16px rgba(255, 255, 255, 0.2);
+  }
+  
+  .card__content {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    padding: 20px;
+    box-sizing: border-box;
+    background-color: #f2f2f2;
+    transform: rotateX(-90deg);
+    transform-origin: bottom;
+    transition: all 0.6s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  }
+  
+  .card:hover .card__content {
+    transform: rotateX(0deg);
+  }
+  
+  .card__title {
+    margin: 0;
+    font-size: 20px;
+    color: #333;
+    font-weight: 700;
+  }
+  
+  .card:hover svg {
+    scale: 0;
+  }
+  
+  .card__description {
+    margin: 10px 0 10px;
+    font-size: 12px;
+    color: #777;
+    line-height: 1.4;
+  }
+  
+  .card__button {
+    padding: 15px;
+    border-radius: 8px;
+    background: #777;
+    border: none;
+    color: white;
+  }
+  
+  .secondary {
+    background: transparent;
+    color: #777;
+    border: 1px solid #777;
+  }
+  
+
+.carousel {
+    display: flex;
+    overflow-x: auto;
+    scroll-behavior: smooth;
+    gap: 20px;
+    padding: 20px;
+    background: rgba(0, 0, 0, 0.8);
+    border-radius: 10px;
+    box-shadow: 0 4px 15px rgba(0, 255, 204, 0.2);
+}
+
+.carousel-item {
+    flex: 0 0 auto;
+    width: 300px;
+    background: linear-gradient(135deg, #1a1a1a, #333333);
+    border-radius: 15px;
+    padding: 20px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.7);
+    transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+}
+
+.carousel-item img {
+    width: 100%;
+    border-radius: 10px;
+    margin-bottom: 15px;
+}
+
+.carousel-item h3 {
+    font-size: 1.5em;
+    color: #00ffcc;
+    margin-bottom: 10px;
+    text-align: center;
+}
+
+.carousel-item p {
+    font-size: 1em;
+    color: #b0b0b0;
+    text-align: center;
+}
+
+.carousel-item:hover {
+    transform: scale(1.05);
+    box-shadow: 0 8px 20px rgba(0, 255, 204, 0.5);
+}
+
+/* Ocultar scrollbar en navegadores compatibles */
+.carousel::-webkit-scrollbar {
+    width: 0;
+    height: 0;
+}
