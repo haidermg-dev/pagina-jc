@@ -1,29 +1,19 @@
-document.addEventListener("DOMContentLoaded", function() {
-    const carousel = document.querySelector('.carousel');
-    const leftControl = document.querySelector('.carousel-control.left');
-    const rightControl = document.querySelector('.carousel-control.right');
-    const itemWidth = document.querySelector('.card').offsetWidth;
+// Seleccionamos el botón del menú, el menú y todos los enlaces del menú
+const menuToggle = document.getElementById('menu-toggle');
+const menu = document.querySelector('nav ul');
+const menuLinks = document.querySelectorAll('nav ul li a');
+const body = document.body;
 
-    let index = 0;
+// Al hacer clic en el botón de hamburguesa, alterna la clase active y no-scroll
+menuToggle.addEventListener('click', function() {
+    menu.classList.toggle('active');
+    body.classList.toggle('no-scroll'); // Alterna la clase para desactivar el desplazamiento
+});
 
-    function showSlide(slideIndex) {
-        const items = document.querySelectorAll('.carousel-item');
-        if (slideIndex >= items.length) index = 0;
-        else if (slideIndex < 0) index = items.length - 1;
-        else index = slideIndex;
-
-        items.forEach((item, i) => {
-            item.style.transform = `translateX(${(i - index) * 100}%)`;
-        });
-    }
-
-    rightControl.addEventListener('click', () => {
-        showSlide(index + 1);
+// Al hacer clic en cualquier enlace dentro del menú, cierra el menú y desactiva el desplazamiento
+menuLinks.forEach(link => {
+    link.addEventListener('click', function() {
+        menu.classList.remove('active');
+        body.classList.remove('no-scroll'); // Asegura que el desplazamiento esté habilitado después de cerrar el menú
     });
-
-    leftControl.addEventListener('click', () => {
-        showSlide(index - 1);
-    });
-
-    showSlide(index);
 });
